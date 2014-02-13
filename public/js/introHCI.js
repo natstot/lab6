@@ -29,10 +29,11 @@ function addProjectDetails(e) {
 	console.log("User clicked on project " + idNumber);
 
 	var url = "/project/" + idNumber;
-	$.get(url, addProject);
+	$.get(url, callbackFn);
+	console.log(url);
 }
 
-function addProject(result) {
+function callbackFn(result) {
 	console.log(result);
 	var idNumber = result.id;
 	var detailsSelector = "div#project" + idNumber + " div.details";
